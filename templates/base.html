@@ -12,9 +12,40 @@
     <!-- jinja code for our own custom styles applied from a child templates from CI tutorial -->
     {% block styles %}
     {% endblock %}
-    <title>Travel Posts</title>
+    <title>Travel Book From Arctics</title>
 </head>
 <body>
+
+    <header">
+    <!-- top navbar from materializecss.com, customized partly with CI tutorial-->
+        <!-- top navbar -->
+		<nav class="nav-extended grey darken-4 grey-darken-text text-darken-3">
+			<div class="nav-wrapper">
+				<a href="{{ url_for('get_posts') }}" class="brand-logo">Arctic story</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="{{ url_for('get_posts') }}">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Add Post</a></li>
+                    <li><a href="">Manage Categories</a></li>
+                    <li><a href="">Log In</a></li>
+                    <li><a href="">Log Out</a></li>
+				</ul>
+			</div>
+		</nav>
+
+        <!-- mobile sidenav -->
+		<ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align grey-darken-text text-darken-3">Arctic story</h4></li>
+            <li><a href="{{ url_for('get_posts') }}">Home</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Add Post</a></li>
+            <li><a href="">Manage Categories</a></li>
+            <li><a href="">Log In</a></li>
+            <li><a href="">Log Out</a></li>
+		</ul>
+        
+    </header>
 
     {% block content %}
     {% endblock %}
