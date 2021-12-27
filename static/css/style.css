@@ -1,3 +1,12 @@
+main {
+        background-image: url("../images/background.jpg"); 
+        background-color: #000000;
+        min-height: 1000px;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
 .text-shadow {
     text-shadow: 1px 1px 1px rgba(255,255,255, 0.2)
 }
