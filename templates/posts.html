@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Child template Heading</h2>
-
     {% for post in posts %}
         {{ post.title_name }}<br>
         {{ post.category_name }}<br>
