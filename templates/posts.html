@@ -2,12 +2,12 @@
 {% block content %}
 
     {% for post in posts %}
-        {{ post.title_name }}<br>
-        {{ post.category_name }}<br>
         {{ post.image_link }}<br>
-        {{ post.summary_text }}<br>
-        {{ post.post_body }}<br>
-        {{ post.post_date }}<br>
+        {{ post.title_text }}<br>
+        {{ post.date_post }}<br>.
+        {{ post.category_name }}<br>
+        {{ post.summary }}<br>
+        {{ post.body}}<br>
     {% endfor %}
 
 {% endblock %}
