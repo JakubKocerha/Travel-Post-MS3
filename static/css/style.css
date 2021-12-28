@@ -9,7 +9,7 @@ main {
 }
 
 nav {
-    height: 100px;
+    height: 130px;
 }
 
 h3 {
@@ -17,6 +17,24 @@ h3 {
     padding-bottom: 1.5rem;
     margin: 0 auto;
 }
+
+/* from CI tutorial */
 .text-shadow {
     text-shadow: 1px 1px 1px rgba(255,255,255, 0.2)
+}
+
+/* Home page styles */
+.padding-home{
+    padding-top: 20%;
+}
+
+.home-button {
+    width: 150px;
+}
+
+/* font fix for Iphone 5/SE Google Dev tools*/
+@media only screen and (min-width: 0) {
+    html {
+        font-size: 13px;
+    }
 }
