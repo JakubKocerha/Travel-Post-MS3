@@ -51,10 +51,24 @@
         
     </header>
     
+    <section>
+        <!-- flash messages; code from CI tutorials-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row base-margin flashes">
+                        <h4 class="no-margin base-h4-padding blue-grey-text text-lighten-5 grey darken-2 center-align">
+                            {{ message }}
+                        </h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     <main>
 
     {% block content %}
-        
     {% endblock %}
 
     </main>

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- code below from materializecss.com and CI tutorials -->
+    <!-- codes below from materializecss.com and CI tutorials -->
     <h3 class="center-align blue-grey-text text-lighten-5">Register</h3>
 
     <div class="row container">
@@ -10,7 +10,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-plus prefix grey-text text-darken-4"></i>
-                        <input id="username" name="username" type="text" class="validate">
+                        <input id="username" name="username" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate">
                         <label for="username">Username</label>
                     </div>
                 </div>
@@ -18,8 +19,17 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-lock prefix grey-text text-darken-4 blue-grey-text text-lighten-5"></i>
-                        <input id="password" name="password" type="password" class="validate">
+                        <input id="password" name="password" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate">
                         <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix grey-text text-darken-4 blue-grey-text text-lighten-5"></i>
+                        <input id="password_confirmation" name="password_confirmation" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate">
+                        <label for="password_confirmation">Repeat Password</label>
                     </div>
                 </div>
                 <!-- register -->
@@ -29,8 +39,6 @@
                     </button>
                 </div>
             </div>
-            
-            
         </form>
     </div>
 
