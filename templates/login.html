@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
     <!-- codes below from materializecss.com and CI tutorials -->
-    <h3 class="center-align blue-grey-text text-lighten-5">Register</h3>
+    <h3 class="center-align blue-grey-text text-lighten-5">Log In</h3>
 
     <div class="row container">
-        <form class="col s12" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12" method="POST" action="{{ url_for('login') }}">
             <!-- username input -->
             <div class="card-panel blue-grey lighten-5">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-user-plus prefix grey-text text-darken-4"></i>
+                        <i class="fas fa-user-cog prefix grey-text text-darken-4"></i>
                         <input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate">
                         <label for="username">Username</label>
@@ -24,29 +24,22 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-user-lock prefix grey-text text-darken-4 blue-grey-text text-lighten-5"></i>
-                        <input id="password_confirmation" name="password_confirmation" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate">
-                        <label for="password_confirmation">Repeat Password</label>
-                    </div>
-                </div>
-                <!-- register -->
+                <!-- login -->
                 <div class="row">
                     <button type="submit" class="col s12 waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-3">
-                        Register <i class="fas fa-sign-in-alt"></i>
+                        Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
         </form>
     </div>
 
+    <!-- code from CI tutorials -->
     <div class="row s12 container">
         <div class="col s12">
             <p class="center-align blue-grey-text text-lighten-5">
                 <i class="fas fa-hand-peace"></i> New here? Join our awesome project! 
-                <a href="{{ url_for('login') }}" class="red-text text-darken-3"><strong>Log In</strong></a>
+                <a href="{{ url_for('register') }}" class="red-text text-darken-3"><strong>Register Account</strong></a>
             </p>
         </div>
     </div>

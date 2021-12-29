@@ -29,7 +29,7 @@ def get_posts():
     posts = mongo.db.posts.find()
     return render_template("posts.html", posts=posts)
 
-# adds register functionality; code from CI turorials 
+# adds register functionality; code from CI turorials
 # excluding password confirmation validation
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -44,7 +44,6 @@ def register():
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         if existing_user:
             flash("This username is used! Please, choose a different one.")
             return redirect(url_for("register"))
@@ -60,6 +59,33 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
+
+
+# adds register functionality; code from CI turorials
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check if username exists in db
+        user_account = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if user_account:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                    user_account["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
