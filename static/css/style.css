@@ -1,17 +1,25 @@
 
 /* base.html */
-main {
+body {
         background-image: url("../images/background.jpg"); 
         background-color: #000000;
-        min-width: 100vw;
+        
         min-height: 100vh;
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
 }
 
-nav {
-    height: 130px;
+header {
+    min-height: 10vh;
+}
+
+main {
+    min-height: 75vh;
+}
+
+footer {
+    min-height: 15vh;
 }
 
 h3 {
@@ -20,12 +28,8 @@ h3 {
     margin: 0 auto;
 }
 
-.base-margin {
-    margin-bottom: 0;
-}
-
-.base-h4-padding {
-    padding: 1rem;
+.margin {
+    margin-top: 10%;
 }
 
 /* from CI tutorial */
