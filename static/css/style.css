@@ -55,6 +55,7 @@ h3 {
     border-bottom: none;
     background-color:rgb(209 206 109 / 20%);
     margin-top: 16px;
+    display: block;
 }
 
 .collapsible-body {
