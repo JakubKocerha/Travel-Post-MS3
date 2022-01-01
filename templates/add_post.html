@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align blue-grey-text text-lighten-5">Add Post</h3>
+
+    <div class="row container">
+        <form class="col s12" method="POST" action="">
+            <div class="row blue-grey lighten-5">
+                <div class="input-field col s12">
+                    <i class="fas fa-caret-down prefix grey-text text-darken-4"></i>
+                    <input id="category_name" name="category_name" type="text" class="validate">
+                    <label for="category_name">Category</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-heading prefix grey-text text-darken-4"></i>
+                    <input id="title_text" name="title_text" type="text" minlength="5"
+                        maxlength="50" data-length="50" class="validate">
+                    <label for="title_text">Title of your post</label>
+                </div>
+                
+                <div class="input-field col s12">
+                    <i class="fas fa-align-justify prefix grey-text text-darken-4"></i>
+                    <textarea id="summary" name="summary" class="materialize-textarea" minlength="5"
+                        maxlength="250" data-length="250" class="validate"></textarea>
+                    <label for="summary">Write a short description of your story</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
+                    <textarea id="post_body" name="post_body" class="materialize-textarea" minlength="5" data-length="4000"></textarea>
+                    <label for="post_body">Here you write you main text</label>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+{% endblock %}
