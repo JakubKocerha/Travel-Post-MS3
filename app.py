@@ -26,7 +26,7 @@ def home():
 # gets data from MongoDB; code from CI tutorials
 @app.route("/get_posts")
 def get_posts():
-    posts = list(mongo.db.posts.find())
+    posts = mongo.db.posts.find()
     return render_template("posts.html", posts=posts)
 
 # adds register functionality; code from CI turorials
