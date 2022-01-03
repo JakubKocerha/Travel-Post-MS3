@@ -50,10 +50,10 @@ h3 {
     margin: 0 auto
 }
 
-/* Home page styles */
+/* Add_post styles */
 .collapsible-header {
     border-bottom: none;
-    background-color:rgb(209 206 109 / 20%);
+    background-color:rgb(80, 80, 16 , 0.8);
     margin-top: 16px;
     display: block;
 }
@@ -65,9 +65,29 @@ h3 {
 }
 
 .collapsible.popout>li.active {
-    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgb(0 0 0 / 15%);
-    box-shadow: -0px 0px 10px 5px rgba(83, 83, 83, 0.8), 0px 0px 10px 5px rgba(83, 83, 83, 0.8);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(223, 222, 222, 0.15), 5px 5px 5px 0px rgba(197, 197, 197, 0.15);
+    box-shadow: 5px 5px 5x 5px rgba(255 255 255 / 15%), 5px 5px 5px 5px rgba(255 255 255 / 15%);
     margin: 16px 0;
+}
+
+.datepicker-date-display,
+.datepicker-table td.is-selected {
+    background-color: #616161;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: rgb(11, 26, 54, 0.8);
+}
+
+.datepicker-table td.is-today {
+    color: #009b15;
+}
+
+.validate {
+    color:#616161;
 }
 
 /* font fix for Iphone 5/SE Google Dev tools*/
