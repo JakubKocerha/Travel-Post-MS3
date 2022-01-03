@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align blue-grey-text text-lighten-5">Add Post</h3>
+    <h3 class="center-align blue-grey-text text-lighten-5">Edit Post</h3>
 
     <div class="container">
         <div class="row card-panel blue-grey lighten-5">
-            <form class="col s12" method="POST" action="{{ url_for('add_post') }}">
+            <form class="col s12" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
                 <!-- category selection -->
                 <div class="row">
                     <div class="input-field col s12">
@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="col s12">
                         <button type="submit" class="col s12 waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-3">
-                            Add Post <i class="fas fa-paper-plane"></i>
+                            Edit Post <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
                 </div>

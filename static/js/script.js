@@ -11,6 +11,7 @@ $(document).ready(function(){
     M.textareaAutoResize($('#post_body'));
     $('input#title_text, input#title_text, textarea#summary, textarea#post_body').characterCounter();
     $('select').formSelect();
+    // datepicker options from CI tutorials
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         showClearBtn: true,
@@ -19,6 +20,7 @@ $(document).ready(function(){
         }
     });
 
+    // select validation from CI tutorials
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
