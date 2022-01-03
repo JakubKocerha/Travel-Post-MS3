@@ -56,7 +56,7 @@ h3 {
 
 .collapsible-header {
     border-bottom: none;
-    background-color:rgb(80, 80, 16 , 0.8);
+    background-color:rgba(80, 80, 16 , 0.8);
     margin-top: 16px;
     display: block;
 }
@@ -66,7 +66,7 @@ h3 {
 }
 
 .collapsible-body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(52, 14, 14, 0.25);
     border-bottom: none;
     margin-bottom: 8px;
 }
@@ -106,6 +106,21 @@ img.responsive-img {
 
 .validate {
     color:#616161;
+}
+
+/* edit post form */
+.max-width {
+    width: 190px;
+    padding: 0 auto;
+    margin-top: 10px;
+}
+
+.cancel-btn {
+    background-color: rgb(153 10 10 / 75%);
+}
+
+.btn-large:hover{
+    background-color: rgb(153 10 10 / 75%);
 }
 
 /* font fix for Iphone 5/SE Google Dev tools*/

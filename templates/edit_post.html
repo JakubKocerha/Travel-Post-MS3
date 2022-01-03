@@ -88,8 +88,12 @@
                 </div>
                 <!-- submit button -->
                 <div class="row">
-                    <div class="col s12">
-                        <button type="submit" class="col s12 waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-3">
+                    <div class="col s12 center-align">
+                        <a href="{{ url_for('get_posts') }}"
+                            class="max-width cancel-btn waves-effect waves-light btn-large blue-grey-text text-lighten-5 z-depth-3">
+                            Cancel <i class="fas fa-times-circle"></i>
+                        </a>
+                        <button type="submit" class="max-width waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-3">
                             Edit Post <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
