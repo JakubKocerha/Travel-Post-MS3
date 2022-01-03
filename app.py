@@ -113,9 +113,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+# adds posts' functionality; code from CI turorials
 @app.route("/add_post")
 def add_post():
-    return render_template("add_post.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_post.html", categories=categories)
 
 
 if __name__ == "__main__":
