@@ -39,7 +39,7 @@ def register():
     if password != password_confirmation:
         flash("Oops! Your passwords don't match. Try again.")
         return redirect(url_for("register"))
-        
+
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -114,8 +114,24 @@ def logout():
 
 
 # adds posts' functionality; code from CI turorials
-@app.route("/add_post")
+@app.route("/add_post", methods=["GET", "POST"])
 def add_post():
+    if request.method == "POST":
+        post = {
+            "category_name": request.form.get("category_name"),
+            "title_text": request.form.get("title_text"),
+            "summary": request.form.get("summary"),
+            "post_body": request.form.get("post_body"),
+            "image_link": request.form.get("image_link"),
+            "image_title": request.form.get("image_title"),
+            "date_post": request.form.get("date_post"),
+            "posted_by": session["user"],
+            "email": request.form.get("email")
+        }
+        mongo.db.posts.insert_one(post)
+        flash("Your post was successfully added")
+        return redirect(url_for("get_posts"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_post.html", categories=categories)
 

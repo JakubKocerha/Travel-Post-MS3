@@ -3,51 +3,93 @@
 
     <h3 class="center-align blue-grey-text text-lighten-5">Add Post</h3>
 
-    <div class="row container blue-grey lighten-5">
-        <form class="col s12" method="POST" action="">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder prefix grey-text text-darken-4"></i>
-                    <select id="category_name" name="category_name" type="text" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name">Category</label>
+    <div class="container">
+        <div class="row card-panel blue-grey lighten-5">
+            <form class="col s12" method="POST" action="{{ url_for('add_post') }}">
+                <!-- category selection -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder prefix grey-text text-darken-4"></i>
+                        <select id="category_name" name="category_name" type="text" class="validate" required>
+                            <option value="" disabled selected>Choose Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Category</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix grey-text text-darken-4"></i>
-                    <input id="title_text" name="title_text" type="text" minlength="5"
-                        maxlength="50" data-length="50" class="validate" required>
-                    <label for="title_text">Title of your post</label>
+                <!-- post title -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix grey-text text-darken-4"></i>
+                        <input id="title_text" name="title_text" type="text" minlength="5"
+                            maxlength="50" data-length="50" class="validate" required>
+                        <label for="title_text">Title of your post</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-justify prefix grey-text text-darken-4"></i>
-                    <textarea id="summary" name="summary" class="materialize-textarea validate" minlength="5"
-                        maxlength="250" data-length="250"  required></textarea>
-                    <label for="summary">Write a short description of your story</label>
+                <!-- post summary -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-justify prefix grey-text text-darken-4"></i>
+                        <textarea id="summary" name="summary" class="materialize-textarea validate" minlength="5"
+                            maxlength="250" data-length="250"  required></textarea>
+                        <label for="summary">Write a short description of your story</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
-                    <textarea id="post_body" name="post_body" class="materialize-textarea validate" minlength="5"
-                    data-length="4000" required></textarea>
-                    <label for="post_body">Here you write you main text</label>
+                <!-- post body -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
+                        <textarea id="post_body" name="post_body" class="materialize-textarea validate" minlength="5"
+                        data-length="4000" required></textarea>
+                        <label for="post_body">Here you write you main text</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix grey-text text-darken-4"></i>
-                    <input  id="date_post" name="date_post" type="text" class="datepicker validate" required>
-                    <label for="date_post">Date</label>
+               <!-- user contact -->
+               <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-at prefix grey-text text-darken-4"></i>
+                        <input id="email" name="email" type="email" minlength="5"
+                            maxlength="50" data-length="50" class="validate">
+                        <label for="email">Include your contact email in case you want readers to contact you</label>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <!-- image link -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-image prefix grey-text text-darken-4"></i>
+                        <input id="image_link" name="image_link" type="url" minlength="5"
+                            maxlength="1000" class="validate" required>
+                        <label for="image_link">Insert the post image link here</label>
+                    </div>
+                </div>
+                <!-- image title -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix grey-text text-darken-4"></i>
+                        <input id="image_title" name="image_title" type="text" minlength="5"
+                            maxlength="50" data-length="50" class="validate" required>
+                        <label for="image_title">Give you image a short description</label>
+                    </div>
+                </div>
+                <!-- post date -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix grey-text text-darken-4"></i>
+                        <input  id="date_post" name="date_post" type="text" class="datepicker validate" required>
+                        <label for="date_post">Date</label>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12">
+                        <button type="submit" class="col s12 waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-3">
+                            Add Post <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}
