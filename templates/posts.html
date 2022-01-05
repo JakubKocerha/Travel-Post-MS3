@@ -21,14 +21,16 @@
                                 
                             </div>
                             <div class="col s12 m3">
-                                <a href="{{ url_for('edit_post', post_id=post._id) }}"
-                                    class="post-button waves-effect waves-light btn blue-grey-text text-lighten-5 grey darken-2">
-                                    Edit
-                                </a>
-                                <a href="{{ url_for('get_posts') }}"
-                                    class="post-button waves-light btn blue-grey-text text-lighten-5 grey darken-2">
-                                    Delete
-                                </a>
+                                {% if session.user|lower == post.posted_by|lower %}
+                                    <a href="{{ url_for('edit_post', post_id=post._id) }}"
+                                        class="post-button waves-effect waves-light btn blue-grey-text text-lighten-5 grey darken-2">
+                                        Edit
+                                    </a>
+                                    <a href="{{ url_for('get_posts') }}"
+                                        class="post-button waves-light btn blue-grey-text text-lighten-5 grey darken-2">
+                                        Delete
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

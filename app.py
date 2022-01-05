@@ -139,6 +139,21 @@ def add_post():
 # adds posts' functionality; code from CI turorials
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "title_text": request.form.get("title_text"),
+            "summary": request.form.get("summary"),
+            "post_body": request.form.get("post_body"),
+            "image_link": request.form.get("image_link"),
+            "image_title": request.form.get("image_title"),
+            "date_post": request.form.get("date_post"),
+            "posted_by": session["user"],
+            "email": request.form.get("email")
+        }
+        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, {"$set": submit})
+        flash("Your post was successfully updated")
+
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
