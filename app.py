@@ -152,11 +152,18 @@ def edit_post(post_id):
             "email": request.form.get("email")
         }
         mongo.db.posts.update_one({"_id": ObjectId(post_id)}, {"$set": submit})
-        flash("Your post was successfully updated")
+        flash("Your Post was successfully updated")
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
+
+
+@app.route("/delete_post/<post_id>")
+def delete_post(post_id):
+    mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
+    flash("Your Post was successfully deleted")
+    return redirect(url_for("get_posts"))
 
 
 if __name__ == "__main__":

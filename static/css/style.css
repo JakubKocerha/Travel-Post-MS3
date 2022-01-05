@@ -50,6 +50,7 @@ h3 {
 }
 
 /* post styles */
+
 .valign-wrapper {
     margin-bottom: 0;
 }
@@ -77,6 +78,7 @@ h3 {
     margin: 16px 0;
 }
 
+/* to set the responsive image to the whole width of parent container in every resolution */
 img.responsive-img {
     width: 100%;
 }
@@ -123,6 +125,10 @@ img.responsive-img {
     background-color: rgb(153 10 10 / 75%);
 }
 
+.delete-color{
+    color: rgba(0,0,0,0.87);
+}
+
 /* font fix for Iphone 5/SE Google Dev tools*/
 @media only screen and (min-width: 0) {
     html {
@@ -131,6 +137,7 @@ img.responsive-img {
 }
 
 @media only screen and (max-width: 600px){
+    /* to display each item in the whole width of parent div */
     .valign-wrapper {
         display: grid;
     }

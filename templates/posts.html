@@ -26,10 +26,21 @@
                                         class="post-button waves-effect waves-light btn blue-grey-text text-lighten-5 grey darken-2">
                                         Edit
                                     </a>
-                                    <a href="{{ url_for('get_posts') }}"
-                                        class="post-button waves-light btn blue-grey-text text-lighten-5 grey darken-2">
+                                    <!-- Delete button - defensive programming (Ed B_alum - Slack)  -->
+                                    <!-- Modal Trigger -->
+                                    <button data-target="{{ post._id }}" class="post-button modal-trigger waves-light btn blue-grey-text text-lighten-5 grey darken-2">
                                         Delete
-                                    </a>
+                                    </button>
+                                    <!-- Modal Structure -->
+                                    <div id="{{ post._id }}" class="modal blue-grey lighten-5">
+                                        <div class="modal-content">
+                                            <h4 class="delete-color center-align">Are you sure you want to DELETE your post?</h4>
+                                        </div>
+                                        <div class="modal-footer blue-grey lighten-5">
+                                            <a href="{{ url_for('get_posts') }}" class="modal-close btn-flat cancel-btn blue-grey-text text-lighten-5">Cancel</a>
+                                            <a href="{{ url_for('delete_post', post_id=post._id) }}" class="modal-close btn-flat blue-grey-text text-lighten-5 grey darken-2">Delete</a>
+                                        </div>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
