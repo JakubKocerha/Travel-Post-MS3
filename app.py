@@ -140,7 +140,7 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
-        submit = {
+        post = {
             "category_name": request.form.get("category_name"),
             "title_text": request.form.get("title_text"),
             "summary": request.form.get("summary"),
@@ -151,7 +151,7 @@ def edit_post(post_id):
             "posted_by": session["user"],
             "email": request.form.get("email")
         }
-        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, {"$set": submit})
+        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, {"$set": post})
         flash("Your Post was successfully updated")
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
@@ -185,6 +185,20 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        post = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, {"$set": post})
+        flash("Category Successfully Updated")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
 
 
 if __name__ == "__main__":
