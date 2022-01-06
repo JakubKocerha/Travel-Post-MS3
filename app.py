@@ -159,6 +159,7 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post, categories=categories)
 
 
+# adds delete functionality; code from CI turorials
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
@@ -166,11 +167,24 @@ def delete_post(post_id):
     return redirect(url_for("get_posts"))
 
 
-@app.route("/categories")
+# adds get categories functionality; code from CI turorials
+@app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
-    
+
+# adds category; code from CI turorials
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":
