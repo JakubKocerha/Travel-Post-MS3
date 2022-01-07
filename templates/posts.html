@@ -34,7 +34,7 @@
                                     <!-- Modal Structure -->
                                     <div id="{{ post._id }}" class="modal blue-grey lighten-5">
                                         <div class="modal-content">
-                                            <h4 class="delete-color center-align">Are you sure you want to DELETE your post?</h4>
+                                            <h4 class="delete-color center-align">Are you sure you want to DELETE your post {{ post.title_text }}?</h4>
                                         </div>
                                         <div class="modal-footer blue-grey lighten-5">
                                             <a href="{{ url_for('get_posts') }}" class="modal-close btn-flat cancel-btn blue-grey-text text-lighten-5">Cancel</a>
