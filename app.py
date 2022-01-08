@@ -29,6 +29,15 @@ def get_posts():
     posts = mongo.db.posts.find()
     return render_template("posts.html", posts=posts)
 
+
+# adds search functionality; code from CI tutorials
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    posts = mongo.db.posts.find({"$text": {"$search": query}})
+    return render_template("posts.html", posts=posts)
+
+
 # adds register functionality; code from CI turorials
 # excluding password confirmation validation
 @app.route("/register", methods=["GET", "POST"])
