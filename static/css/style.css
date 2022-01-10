@@ -149,6 +149,25 @@ img.responsive-img {
     color: rgba(0,0,0,0.87);
 }
 
+/* pagination-page-info */
+.pagination-page-info {
+    color: #eceff1;
+    text-align: center;
+}
+
+.collapsible.popout nav,
+.collapsible.popout nav li {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    text-align: center;
+    width: 100%;
+    display: contents;
+}
+
+.pagination li a {
+    color: #949494;
+}
+
 /* cagetory card-action button*/
 /* font fix for Iphone 5/SE Google Dev tools*/
 @media only screen and (min-width: 0) {

@@ -5,6 +5,8 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+# import pagination
+from flask_paginate import Pagination, get_page_args
 if os.path.exists("env.py"):
     import env
 
@@ -25,10 +27,25 @@ def home():
 
 
 # gets data from MongoDB; code from CI tutorials
+# pagination https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+# slack https://code-institute-room.slack.com/archives/C7JQY2RHC/p1622213878181600
 @app.route("/get_posts")
 def get_posts():
-    posts = mongo.db.posts.find()
-    return render_template("posts.html", posts=posts)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 5
+    offset = (page - 1) * per_page
+    posts = list(mongo.db.posts.find())
+    total = len(posts)
+    posts_paginated = posts[offset: offset + per_page]
+    pagination = Pagination(
+        page=page, per_page=per_page, total=total,
+        css_framework='materializecss')
+
+    return render_template(
+        "posts.html", posts=posts_paginated, page=page, per_page=per_page,
+        pagination=pagination)
 
 
 # adds search functionality; code from CI tutorials
@@ -104,14 +121,15 @@ def login():
 # adds profile functionality; code from CI turorials
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the user's posts
+    # grab the user's posts paginated
     posts = mongo.db.posts.find()
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username, posts=posts)
+        return render_template("profile.html", username=username,
+        posts=posts)
 
     return redirect(url_for("login"))
 
@@ -184,6 +202,7 @@ def delete_post(post_id):
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
 
 # adds category; code from CI turorials
 @app.route("/add_category", methods=["GET", "POST"])
