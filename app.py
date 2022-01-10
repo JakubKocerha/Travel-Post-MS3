@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 def home():
     return render_template('home.html')
 
+
 # gets data from MongoDB; code from CI tutorials
 @app.route("/get_posts")
 def get_posts():
@@ -103,12 +104,14 @@ def login():
 # adds profile functionality; code from CI turorials
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # grab the user's posts
+    posts = mongo.db.posts.find()
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, posts=posts)
 
     return redirect(url_for("login"))
 
