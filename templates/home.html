@@ -8,10 +8,14 @@
                     Post your stories, tips, and tricks about your adventures in the European Arctic.
                 </h4>
                 <br>
+                <!-- Hide Start(register link) button to logged in users -->
+                {% if session.user|lower %}
+                {% else %}
                     <a href="{{ url_for('register') }}"
                         class="home-button waves-effect waves-light btn-large blue-grey-text text-lighten-5 grey darken-2 z-depth-5">
                         Start
                     </a>
+                {% endif %}
             </div>
         </div>
     </div>
