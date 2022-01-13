@@ -29,7 +29,7 @@ def home():
 # gets data from MongoDB; code from CI tutorials
 # pagination https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 # slack https://code-institute-room.slack.com/archives/C7JQY2RHC/p1622213878181600
-@app.route("/get_posts")
+@app.route("/get_posts", methods=["GET", "POST"])
 def get_posts():
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
@@ -42,10 +42,40 @@ def get_posts():
     pagination = Pagination(
         page=page, per_page=per_page, total=total,
         css_framework='materializecss')
+    print("############################")
+    print(pagination)
 
     return render_template(
         "posts.html", posts=posts_paginated, page=page, per_page=per_page,
         pagination=pagination)
+
+    if request.method == "POST":
+        query = request.form.get("query")
+        search_posts = mongo.db.posts.find({"$text": {"$search": query}})
+        page, per_page, offset = get_page_args(
+            page_parameter="page",
+            per_page_parameter="per_page",
+            offset_parameter="offset"
+        )
+        per_page = 5
+        offset = (page - 1) * per_page
+        posts = list(mongo.db.posts.find())
+        total = len(posts)
+        posts_paginated = posts[offset: offset + per_page]
+        pagination = Pagination(
+            page=page,
+            per_page=per_page,
+            total=total,
+            css_framework='materializecss')
+
+        return render_template(
+            "posts.html",
+            search_posts=search_posts,
+            posts=posts_paginated,
+            page=page,
+            per_page=per_page,
+            pagination=pagination,
+        )
 
 
 # adds search functionality; code from CI tutorials
@@ -128,8 +158,8 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username,
-        posts=posts)
+        return render_template(
+            "profile.html", username=username, posts=posts)
 
     return redirect(url_for("login"))
 
@@ -197,6 +227,16 @@ def delete_post(post_id):
     return redirect(url_for("get_posts"))
 
 
+# adds delete functionality; code from CI turorials
+@app.route("/delete_userpost/<post_id>")
+def delete_userpost(post_id):
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    username = post["posted_by"]
+    mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
+    flash("Your Post was successfully deleted")
+    return redirect(url_for("profile", username=username))
+
+
 # adds get categories functionality; code from CI turorials
 @app.route("/get_categories")
 def get_categories():
@@ -224,7 +264,8 @@ def edit_category(category_id):
         post = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, {"$set": post})
+        mongo.db.categories.update_one(
+            {"_id": ObjectId(category_id)}, {"$set": post})
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 

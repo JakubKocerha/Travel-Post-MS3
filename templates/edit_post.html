@@ -46,8 +46,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
-                        <textarea id="post_body" name="post_body" class="materialize-textarea validate" minlength="5"
-                            data-length="4000" required>{{ post.post_body }}</textarea>
+                        <input type="text" value="{{ post.post_body }}">
                         <label for="post_body">Here you write you main text</label>
                     </div>
                 </div>
