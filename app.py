@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 # wires base.html up with home.html
 @app.route("/home")
 def home():
+
     return render_template('home.html')
 
 
@@ -45,13 +46,11 @@ def get_posts():
     print("############################")
     print(pagination)
 
-    return render_template(
-        "posts.html", posts=posts_paginated, page=page, per_page=per_page,
-        pagination=pagination)
 
     if request.method == "POST":
         query = request.form.get("query")
-        search_posts = mongo.db.posts.find({"$text": {"$search": query}})
+        search_posts = list(mongo.db.posts.find(
+            {"$text": {"$search": query}}).sort("title_text"))
         page, per_page, offset = get_page_args(
             page_parameter="page",
             per_page_parameter="per_page",
@@ -67,24 +66,29 @@ def get_posts():
             per_page=per_page,
             total=total,
             css_framework='materializecss')
+        print(search_posts)
 
         return render_template(
             "posts.html",
-            search_posts=search_posts,
-            posts=posts_paginated,
+            
+            posts=search_posts,
             page=page,
             per_page=per_page,
-            pagination=pagination,
+            pagination=pagination
         )
+    
+    return render_template(
+        "posts.html", posts=posts_paginated, page=page, per_page=per_page,
+        pagination=pagination)
 
-
+"""
 # adds search functionality; code from CI tutorials
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search", methods=["GET",  "POST"])
 def search():
     query = request.form.get("query")
     posts = mongo.db.posts.find({"$text": {"$search": query}})
     return render_template("posts.html", posts=posts)
-
+"""
 
 # adds register functionality; code from CI turorials
 # excluding password confirmation validation

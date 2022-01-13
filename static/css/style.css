@@ -168,6 +168,18 @@ img.responsive-img {
     color: #949494;
 }
 
+
+/* Footer */
+.info {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+.info p {
+    margin: 1% 0 0 2%;
+}
+
 /* cagetory card-action button*/
 /* font fix for Iphone 5/SE Google Dev tools*/
 @media only screen and (min-width: 0) {
@@ -181,4 +193,10 @@ img.responsive-img {
     .valign-wrapper {
         display: grid;
     }
+}
+
+@media only screen and (min-width: 993px){
+    nav .brand-logo{
+        padding-left: 20px;
+    } 
 }
