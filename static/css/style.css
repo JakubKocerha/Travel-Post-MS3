@@ -8,20 +8,23 @@ body {
     min-height: 100vh;
 }
 
-/* Page layout */
+/* Base styles*/
 header {
     min-height: 10vh;
 }
 
 main {
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 footer {
     min-height: 15vh;
 }
 
-/* basic margins, paddings */
+nav ul a:hover {
+    background-color: rgba(255, 255, 255, 0.151);
+}
+
 h3 {
     padding-top: 3rem;
     padding-bottom: 1.5rem;
@@ -34,10 +37,10 @@ h3 {
 }
 
 .margin {
-    margin-top: 10%;
+    margin-top: 4rem;
+    margin-bottom: 0;
 }
 
-/* from CI tutorial */
 .text-shadow {
     text-shadow: 1px 1px 1px rgba(255,255,255, 0.2)
 }
@@ -56,7 +59,6 @@ h3 {
 }
 
 /* post styles */
-
 .valign-wrapper {
     margin-bottom: 0;
 }
@@ -76,6 +78,10 @@ h3 {
 
 .collapsible-header:hover {
     background-color: rgba(51, 74, 43, 1);
+}
+
+.btn:focus {
+    background-color: rgba(153, 10, 10, 0.75);
 }
 
 .collapsible-header h5 {
@@ -138,7 +144,7 @@ img.responsive-img {
 
 .search-btn {
     margin: 2px 0;
-    width: 118px;
+    width: 121px;
 }
 
 .post-button {
@@ -148,6 +154,10 @@ img.responsive-img {
 }
 
 /* add post form */
+.card-panel {
+    margin-bottom: 4rem;
+}
+
 .dropdown-content li>span {
     color: #000000;
 }
@@ -258,7 +268,7 @@ visibility: visible;
     display: contents;
 }
 
-/* code from https://github.com/BarryBeics/Rosie-Odenkirk */
+/* social links code from https://github.com/BarryBeics/Rosie-Odenkirk */
 .social-links li a i {
     width: 32px;
     height: 32px;
@@ -280,11 +290,25 @@ visibility: visible;
     background: rgba(51, 74, 43, 0.75);
 }
 
-/* cagetory card-action button*/
+/* cagetories*/
+.cagegory-margin {
+    margin-bottom: 4rem;
+}
+
 /* font fix for Iphone 5/SE Google Dev tools*/
-@media only screen and (min-width: 0) {
-    html {
-        font-size: 13px;
+@media only screen and (max-width: 360px) {
+    nav .brand-logo {
+        font-size: 27px;
+    }
+
+    .margin {
+        margin-top: 2rem;
+    }
+
+    .cat-btn,
+    .cancel-btn {
+        font-size: 16px;
+        min-width: 190px;
     }
 }
 
@@ -310,12 +334,27 @@ visibility: visible;
     .container {
         width: 100%;
     }
+
+    .card-panel {
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    .max-width {
+        width: 120px;
+    }
+
+    .cat-btn,
+    .cancel-btn {
+        font-size: 16px;
+        min-width: 190px;
+    }
 }
 
 @media only screen and (min-width: 993px) {
     nav .brand-logo {
         padding-left: 20px;
-    } 
+    }
 
     #myBtn {
         display: none;

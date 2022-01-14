@@ -151,7 +151,6 @@ def login():
 # adds profile functionality; code from CI turorials
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the user's posts paginated
     posts = mongo.db.posts.find()
     # grab the session user's username from db
     username = mongo.db.users.find_one(
@@ -177,11 +176,12 @@ def logout():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     if request.method == "POST":
+        postbody = request.form.get("post_body").splitlines()
         post = {
             "category_name": request.form.get("category_name"),
             "title_text": request.form.get("title_text"),
             "summary": request.form.get("summary"),
-            "post_body": request.form.get("post_body"),
+            "post_body": postbody,
             "image_link": request.form.get("image_link"),
             "image_title": request.form.get("image_title"),
             "date_post": request.form.get("date_post"),
@@ -200,11 +200,12 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
+        postbody = request.form.get("post_body").splitlines()
         post = {
             "category_name": request.form.get("category_name"),
             "title_text": request.form.get("title_text"),
             "summary": request.form.get("summary"),
-            "post_body": request.form.get("post_body"),
+            "post_body": postbody,
             "image_link": request.form.get("image_link"),
             "image_title": request.form.get("image_title"),
             "date_post": request.form.get("date_post"),

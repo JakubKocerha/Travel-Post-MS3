@@ -39,14 +39,15 @@
                         <i class="fas fa-align-justify prefix grey-text text-darken-4"></i>
                         <textarea id="summary" name="summary" class="materialize-textarea validate" minlength="5"
                             maxlength="250" data-length="250"  required>{{ post.summary }}</textarea>
-                        <label for="summary">Write a short description of your story</label>
+                        <label for="summary">Title short description</label>
                     </div>
                 </div>
                 <!-- post body -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
-                        <input type="text" value="{{ post.post_body }}">
+                        <textarea id="post_body" name="post_body" class="materialize-textarea validate" minlength="5"
+                        data-length="4000" required>{{ post.post_body }}</textarea>
                         <label for="post_body">Here you write you main text</label>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
                         <i class="fas fa-at prefix grey-text text-darken-4"></i>
                         <input id="email" name="email" type="email" value="{{ post.email }}" minlength="5"
                             maxlength="50" data-length="50" class="validate">
-                        <label for="email">Include your contact email in case you want readers to contact you</label>
+                        <label for="email">Contact email</label>
                     </div>
                 </div>
                 <!-- image link -->
@@ -74,7 +75,7 @@
                         <i class="fas fa-pencil-alt prefix grey-text text-darken-4"></i>
                         <input id="image_title" name="image_title" type="text" value="{{ post.image_title }}" minlength="5"
                             maxlength="50" data-length="50" class="validate" required>
-                        <label for="image_title">Give your image a short description</label>
+                        <label for="image_title">Post related image link</label>
                     </div>
                 </div>
                 <!-- post date -->

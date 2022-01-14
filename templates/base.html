@@ -13,7 +13,7 @@
     <!-- jinja code for our own custom styles applied from a child templates from CI tutorial -->
     {% block styles %}
     {% endblock %}
-    <title>Travel Book From Arctics</title>
+    <title>Arctic Travels</title>
 </head>
 <body>
 <!-- https://codepen.io/matthewcain/pen/ZepbeR -->
@@ -72,8 +72,8 @@
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
-                        <div class="row container flashes margin">
-                            <h4 class="center-align grey darken-1 z-depth-5 blue-grey-text text-lighten-5">{{ message }}</h4>
+                        <div class="row container margin">
+                            <h4 class="center-align blue-grey-text text-lighten-5">{{ message }}</h4>
                         </div>
                     {% endfor %}
                 {% endif %}
