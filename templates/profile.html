@@ -6,7 +6,7 @@
     <div class="row container">
         <div class="col s12">
             <ul class="collapsible popout">
-                {% for post in posts|sort(reverse=true, attribute="_id") %}
+                {% for post in posts|sort(reverse=true, attribute="date_post") %}
                     {% if session.user|lower == post.posted_by|lower %}
                         <li>
                             <div class="collapsible-header blue-grey-text text-lighten-5">
@@ -17,8 +17,8 @@
                                     </div>
                                     <div class="col s12 m6">
                                         <h5>{{ post.title_text }}</h5>
-                                        <span>{{ post.date_post }}</span>
-                                        <span>Category: {{ post.category_name }}</span>
+                                        <span class="post-date">{{ post.date_post }}</span>
+                                        <span class="post-category">{{ post.category_name }}</span>
                                         <p id="toggle">{{ post.summary}}</p>
                                         
                                     </div>
@@ -46,9 +46,9 @@
                                 </div>
                             </div>
                             <div class="collapsible-body blue-grey-text text-lighten-5">
-                                <p>{{ post.post_body }}</p>
-                                <p>Posted by: {{ post.posted_by }}</p>
-                                <p>Email: {{ post.email }}</p>
+                                <p class="main-p">{{ post.post_body }}</p>
+                                <p class="user-p">Posted by: <em class="p-italic">{{ post.posted_by }}</em></p>
+                                <p class="email-p">Email: <em class="p-italic">{{ post.email }}</em></p>
                             </div>
                         </li>
                     {% endif %}

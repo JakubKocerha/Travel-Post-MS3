@@ -43,14 +43,11 @@ def get_posts():
     pagination = Pagination(
         page=page, per_page=per_page, total=total,
         css_framework='materializecss')
-    print("############################")
-    print(pagination)
-
 
     if request.method == "POST":
         query = request.form.get("query")
         search_posts = list(mongo.db.posts.find(
-            {"$text": {"$search": query}}).sort("title_text"))
+            {"$text": {"$search": query}}))
         page, per_page, offset = get_page_args(
             page_parameter="page",
             per_page_parameter="per_page",
@@ -70,7 +67,6 @@ def get_posts():
 
         return render_template(
             "posts.html",
-            
             posts=search_posts,
             page=page,
             per_page=per_page,

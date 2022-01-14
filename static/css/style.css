@@ -5,6 +5,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 /* Page layout */
@@ -13,7 +14,7 @@ header {
 }
 
 main {
-    min-height: 75vh;
+    min-height: 80vh;
 }
 
 footer {
@@ -47,7 +48,7 @@ h3 {
 
 /* home page styles */
 .padding-home{
-    padding-top: 20%;
+    padding: 30vh 0;
 }
 
 .home-button {
@@ -68,9 +69,36 @@ h3 {
 
 .collapsible-header {
     border-bottom: none;
-    background-color:rgba(80, 80, 16 , 0.8);
+    background-color:rgba(51, 74, 43, 0.75);
     margin-top: 16px;
     display: block;
+}
+
+.collapsible-header:hover {
+    background-color: rgba(51, 74, 43, 1);
+}
+
+.collapsible-header h5 {
+    font-size: 27px;
+    text-shadow: 1px 1px 0 #000000;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.collapsible-header p {
+    font-size: 15px;
+    font-style: oblique;
+}
+
+.post-category {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.post-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #f7ba69;
 }
 
 .strong-color {
@@ -83,9 +111,23 @@ h3 {
     margin-bottom: 8px;
 }
 
+.main-p {
+    font-size: 16px;
+}
+
+.email-p,
+.user-p {
+    margin: 5px;
+}
+
+.p-italic {
+    font-weight: 500;
+    color: #f7ba69;
+}
+
 .collapsible.popout>li.active {
     -webkit-box-shadow: 5px 5px 5px 0px rgba(223, 222, 222, 0.15), 5px 5px 5px 0px rgba(197, 197, 197, 0.15);
-    box-shadow: 5px 5px 5x 5px rgba(255 255 255 / 15%), 5px 5px 5px 5px rgba(255 255 255 / 15%);
+    box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.15), 5px 5px 0px 0px rgba(253, 253, 253, 0.15);
     margin: 16px 0;
 }
 
@@ -133,7 +175,7 @@ img.responsive-img {
 /* edit post form */
 .max-width {
     width: 200px;
-    padding: 0 auto;
+    padding: 0;
     margin-top: 10px;
 }
 
@@ -168,16 +210,74 @@ img.responsive-img {
     color: #949494;
 }
 
-
-/* Footer */
-.info {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 0;
+/* back-to-top button https://codepen.io/matthewcain/pen/ZepbeR */
+#myBtn {
+    display: inline-block;
+    background-color: #945b06ee;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
 }
 
-.info p {
-    margin: 1% 0 0 2%;
+#myBtn:hover {
+cursor: pointer;
+background-color: #333;
+}
+
+#myBtn:active {
+background-color: #555;
+}
+
+#myBtn.show {
+opacity: 1;
+visibility: visible;
+}
+
+/* Footer */
+.display {
+    display: grid;
+}
+
+.social-links {
+    padding-bottom: 15px;
+    display: block;
+    text-align: center;
+    padding: 0 3px;
+}
+
+.social-links li {
+    display: contents;
+}
+
+/* code from https://github.com/BarryBeics/Rosie-Odenkirk */
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    margin: 3%;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #e8f0fe;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: rgba(51, 74, 43, 0.75);
 }
 
 /* cagetory card-action button*/
@@ -188,15 +288,36 @@ img.responsive-img {
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     /* to display each item in the whole width of parent div */
     .valign-wrapper {
         display: grid;
     }
+
+    .collapsible-header {
+        text-align: center;
+    }
+
+    .collapsible-header h5 {
+        font-size: 24px;
+    }
+
+    .collapsible.popout>li.active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .container {
+        width: 100%;
+    }
 }
 
-@media only screen and (min-width: 993px){
-    nav .brand-logo{
+@media only screen and (min-width: 993px) {
+    nav .brand-logo {
         padding-left: 20px;
     } 
+
+    #myBtn {
+        display: none;
+    }
 }

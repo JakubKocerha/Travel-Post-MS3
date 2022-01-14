@@ -8,6 +8,7 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"
         referrerpolicy="no-referrer" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"> <!-- code from CI tutorial -->
     <!-- jinja code for our own custom styles applied from a child templates from CI tutorial -->
     {% block styles %}
@@ -15,8 +16,12 @@
     <title>Travel Book From Arctics</title>
 </head>
 <body>
+<!-- https://codepen.io/matthewcain/pen/ZepbeR -->
+    <a class="btn" id="myBtn" title="Go to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
-    <header">
+    <header>
     <!-- top navbar from materializecss.com, customized with CI tutorial-->
         <!-- top navbar -->
 		<nav class="nav-extended grey darken-4">
@@ -81,22 +86,44 @@
 
     </main>
     
-    <footer class="page-footer grey darken-4">
-        <div class="blue-grey-text text-lighten-5 info">
-            <h6>Contact:</h6>
-            <p>Info: info@arctictravelsat.com</p>
-            <p>Admin: admin@arctictravelsat.com</p>
-            <p>Support: support@arctictravelsat.com</p>
+    <footer class=" valign-wrapper display grey darken-4">
+        <div class="col-sm-12 social-box">
+            <ul class="list-inline social-links">
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://facebook.com/">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.twitter.com/">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.pinterest.com/">
+                        <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                        <span class="sr-only">Pinterest</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.youtube.com/">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="blue-grey-text text-lighten-5" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
-  
 
+    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- code from CI tutorial -->
