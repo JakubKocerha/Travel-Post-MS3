@@ -27,7 +27,7 @@
             {% if posts|length > 0 %}
                 <ul class="collapsible popout">
                     {{ pagination.links }}
-                        {% for post in posts|sort(reverse=true, attribute="date_post") %}
+                        {% for post in posts %} <!-- |sort(reverse=true, attribute="date_post" -->
                         <li>
                             <div class="collapsible-header blue-grey-text text-lighten-5">
                                 <div class="row valign-wrapper">
@@ -68,7 +68,9 @@
                                 </div>
                             </div>
                             <div class="collapsible-body blue-grey-text text-lighten-5">
-                                <p class="main-p">{{ post.post_body }}</p>
+                                {% for body in post.post_body %}
+                                <p class="main-p">{{ body }}</p>
+                                {% endfor %}
                                 <p class="user-p">Posted by: <em class="p-italic">{{ post.posted_by }}</em></p>
                                 <p class="email-p">Email: <em class="p-italic">{{ post.email }}</em></p>
                             </div>

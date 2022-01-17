@@ -37,7 +37,7 @@ def get_posts():
         offset_parameter='offset')
     per_page = 5
     offset = (page - 1) * per_page
-    posts = list(mongo.db.posts.find())
+    posts = list(mongo.db.posts.find().sort("date_post", 1))
     total = len(posts)
     posts_paginated = posts[offset: offset + per_page]
     pagination = Pagination(
@@ -55,7 +55,7 @@ def get_posts():
         )
         per_page = 5
         offset = (page - 1) * per_page
-        posts = list(mongo.db.posts.find())
+        posts = list(mongo.db.posts.find().sort("date_post", 1))
         total = len(posts)
         posts_paginated = posts[offset: offset + per_page]
         pagination = Pagination(
@@ -72,7 +72,6 @@ def get_posts():
             per_page=per_page,
             pagination=pagination
         )
-    
     return render_template(
         "posts.html", posts=posts_paginated, page=page, per_page=per_page,
         pagination=pagination)
@@ -191,12 +190,11 @@ def add_post():
         mongo.db.posts.insert_one(post)
         flash("Your post was successfully added")
         return redirect(url_for("get_posts"))
-
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_post.html", categories=categories)
 
 
-# adds posts' functionality; code from CI turorials
+# edit posts' functionality; code from CI turorials
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
