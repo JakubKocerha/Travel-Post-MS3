@@ -1,5 +1,4 @@
 import os
-from pprintpp import pprint as pp
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -56,7 +55,7 @@ def get_posts():
         )
         per_page = 50
         offset = (page - 1) * per_page
-        posts = list(mongo.db.posts.find())  # {"$text": {"$search": query}}))
+        posts = list(mongo.db.posts.find())
         total = len(posts)
         posts_paginated = posts[offset: offset + per_page]
         pagination = Pagination(
