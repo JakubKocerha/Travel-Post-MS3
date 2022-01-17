@@ -38,7 +38,11 @@
                     <div class="input-field col s12">
                         <i class="fas fa-align-justify prefix grey-text text-darken-4"></i>
                         <textarea id="summary" name="summary" class="materialize-textarea validate" minlength="5"
-                            maxlength="250" data-length="250"  required>{{ post.summary }}</textarea>
+                            maxlength="250" data-length="250"  required>
+                            {%- for summaryitem in post.summary -%}
+                                {{ summaryitem + '\n' }} 
+                            {%- endfor -%}
+                        </textarea>
                         <label for="summary">Title short description</label>
                     </div>
                 </div>
@@ -48,11 +52,11 @@
                         <i class="fas fa-book-open prefix grey-text text-darken-4"></i>
                         <textarea id="post_body" name="post_body" class="materialize-textarea validate" minlength="5"
                         data-length="4000" required>
-                        {%- for body in post.post_body -%}
-                            {{ body }}
-                        {%- endfor -%}
+                            {%- for body in post.post_body -%}
+                                {{ body + '\n' }} 
+                            {%- endfor -%}
                         </textarea>
-                        <label for="post_body">Here you write you main text</label>
+                        <label for="post_body">Write your main text</label>
                     </div>
                 </div>
                <!-- user contact -->
@@ -70,7 +74,7 @@
                         <i class="fas fa-image prefix grey-text text-darken-4"></i>
                         <input id="image_link" name="image_link" type="url" value="{{ post.image_link }}" minlength="5"
                             maxlength="1000" class="validate" required>
-                        <label for="image_link">Include image link related to your story</label>
+                        <label for="image_link">Post related image link</label>
                     </div>
                 </div>
                 <!-- image title -->

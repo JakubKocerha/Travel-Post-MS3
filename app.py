@@ -1,4 +1,5 @@
 import os
+from pprintpp import pprint as pp
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -35,9 +36,9 @@ def get_posts():
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
-    per_page = 5
+    per_page = 10
     offset = (page - 1) * per_page
-    posts = list(mongo.db.posts.find().sort("date_post", 1))
+    posts = list(mongo.db.posts.find().sort("post_date"))
     total = len(posts)
     posts_paginated = posts[offset: offset + per_page]
     pagination = Pagination(
@@ -53,9 +54,9 @@ def get_posts():
             per_page_parameter="per_page",
             offset_parameter="offset"
         )
-        per_page = 5
+        per_page = 50
         offset = (page - 1) * per_page
-        posts = list(mongo.db.posts.find().sort("date_post", 1))
+        posts = list(mongo.db.posts.find())  # {"$text": {"$search": query}}))
         total = len(posts)
         posts_paginated = posts[offset: offset + per_page]
         pagination = Pagination(
@@ -63,7 +64,6 @@ def get_posts():
             per_page=per_page,
             total=total,
             css_framework='materializecss')
-        print(search_posts)
 
         return render_template(
             "posts.html",
@@ -176,10 +176,11 @@ def logout():
 def add_post():
     if request.method == "POST":
         postbody = request.form.get("post_body").splitlines()
+        postsummary = request.form.get("summary").splitlines()
         post = {
             "category_name": request.form.get("category_name"),
             "title_text": request.form.get("title_text"),
-            "summary": request.form.get("summary"),
+            "summary": postsummary,
             "post_body": postbody,
             "image_link": request.form.get("image_link"),
             "image_title": request.form.get("image_title"),
@@ -199,10 +200,11 @@ def add_post():
 def edit_post(post_id):
     if request.method == "POST":
         postbody = request.form.get("post_body").splitlines()
+        postsummary = request.form.get("summary").splitlines()
         post = {
             "category_name": request.form.get("category_name"),
             "title_text": request.form.get("title_text"),
-            "summary": request.form.get("summary"),
+            "summary": postsummary,
             "post_body": postbody,
             "image_link": request.form.get("image_link"),
             "image_title": request.form.get("image_title"),
@@ -215,6 +217,7 @@ def edit_post(post_id):
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
+
     return render_template("edit_post.html", post=post, categories=categories)
 
 

@@ -27,11 +27,11 @@
             {% if posts|length > 0 %}
                 <ul class="collapsible popout">
                     {{ pagination.links }}
-                        {% for post in posts %} <!-- |sort(reverse=true, attribute="date_post" -->
+                        {% for post in posts|sort(reverse=true, attribute="date_post") %} <!--,|sort(reverse=true) reverse=true  attribute="date_post"  -->
                         <li>
                             <div class="collapsible-header blue-grey-text text-lighten-5">
                                 <div class="row valign-wrapper">
-                                    <div class="col s12 m3 img-container">
+                                    <div class="col s12 m3 img-container center-align">
                                         <img src="{{ post.image_link }}" alt="{{ post.image_title }}" class="materialboxed responsive-img">
                                         <span>{{ post.image_title }}</span>
                                     </div>
@@ -39,7 +39,11 @@
                                         <h5>{{ post.title_text }}</h5>
                                         <span class="post-date">{{ post.date_post }}</span>
                                         <span class="post-category">{{ post.category_name }}</span>
-                                        <p id="toggle">{{ post.summary}}</p>
+                                        {% for summaryline in post.summary %}
+                                            <p>
+                                            {{ summaryline }}
+                                            </p>
+                                        {% endfor %}
                                         
                                     </div>
                                     <div class="col s12 m3">
@@ -69,10 +73,10 @@
                             </div>
                             <div class="collapsible-body blue-grey-text text-lighten-5">
                                 {% for body in post.post_body %}
-                                <p class="main-p">{{ body }}</p>
+                                    <p class="main-p">{{ body }}</p>
                                 {% endfor %}
-                                <p class="user-p">Posted by: <em class="p-italic">{{ post.posted_by }}</em></p>
-                                <p class="email-p">Email: <em class="p-italic">{{ post.email }}</em></p>
+                                <p class="user-p">Posted by:<em class="p-italic">{{ post.posted_by }}</em></p>
+                                <p class="email-p">Email:<em class="p-italic">{{ post.email }}</em></p>
                             </div>
                         </li>
                         {% endfor %}

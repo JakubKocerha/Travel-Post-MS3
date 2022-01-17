@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+button, input, optgroup, select, textarea {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
 /* base template */
 body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
     background-image: url("../images/background.jpg"); 
     background-color: #000000;
     background-position: top;
@@ -129,6 +138,7 @@ h3 {
 .p-italic {
     font-weight: 500;
     color: #f7ba69;
+    margin-left: 10px;
 }
 
 .collapsible.popout>li.active {
@@ -144,7 +154,7 @@ img.responsive-img {
 
 .search-btn {
     margin: 2px 0;
-    width: 121px;
+    width: 140px;
 }
 
 .post-button {
@@ -298,7 +308,7 @@ visibility: visible;
 /* font fix for Iphone 5/SE Google Dev tools*/
 @media only screen and (max-width: 360px) {
     nav .brand-logo {
-        font-size: 27px;
+        font-size: 26px;
     }
 
     .margin {
@@ -307,8 +317,8 @@ visibility: visible;
 
     .cat-btn,
     .cancel-btn {
-        font-size: 16px;
-        min-width: 190px;
+        font-size: 15px;
+        min-width: 120px;
     }
 }
 
@@ -341,22 +351,18 @@ visibility: visible;
     }
 
     .max-width {
-        width: 120px;
+        width: 180px;
     }
 
     .cat-btn,
     .cancel-btn {
-        font-size: 16px;
-        min-width: 190px;
+        font-size: 15px;
+        /*min-width: 190px;*/
     }
 }
 
 @media only screen and (min-width: 993px) {
     nav .brand-logo {
         padding-left: 20px;
-    }
-
-    #myBtn {
-        display: none;
     }
 }

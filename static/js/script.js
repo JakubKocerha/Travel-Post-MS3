@@ -12,7 +12,7 @@ $(document).ready(function(){
     $('select').formSelect();
     // datepicker options from CI tutorials
     $('.datepicker').datepicker({
-        format: "dd mmmm, yyyy",
+        format: "yyyy.mm.dd",
         showClearBtn: true,
         i18n:{
             done: "Select"
