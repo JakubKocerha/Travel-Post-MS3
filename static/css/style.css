@@ -117,7 +117,7 @@ h3 {
 }
 
 .strong-color {
-    color: rgb(153 160 243);
+    color: rgb(153, 160, 243);
 }
 
 .collapsible-body {
@@ -200,11 +200,11 @@ img.responsive-img {
 }
 
 .cancel-btn {
-    background-color: rgb(153 10 10 / 75%);
+    background-color: rgba(153, 10, 10, 0.75);
 }
 
 .cancel-btn:hover {
-    background-color: rgb(153 10 10 / 75%);
+    background-color: rgba(153, 10, 10, 0.75);
 }
 
 .delete-color{
