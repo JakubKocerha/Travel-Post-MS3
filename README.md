@@ -125,15 +125,15 @@ Posts consist of Materializecss library collapsible component and its required J
 ![Posts_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postlogged.jpg)
 
 ###### Delete button 
-    - defensive programming solved with a confirmation toggle window. 
-    - The user is informed about the confirmed deletion with a flash message in the upper part of the page.
+- defensive programming solved with a confirmation toggle window. 
+- The user is informed about the confirmed deletion with a flash message in the upper part of the page.
 ![post_delete_toggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postdeletetoggle.jpg)
 ![post_delete_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postdeleteconfirm.jpg)
 
 ###### Edit button
-    - redirects the user into edit_post.html template with input fields/textareas correctly prefilled with actual saved data ready for editing. All fields required with validation specificity embedded in edit_post.html template except for email, as explained before. The form offers edit/cancel buttons. After edit button confirmation, the post data get updated in the database and consequently on the posts.html. 
-    - Cancel button redirects back to posts.html template. 
-    - The user is informed about the confirmed edit(update) with a flash message in the upper part of the page.
+- redirects the user into edit_post.html template with input fields/textareas correctly prefilled with actual saved data ready for editing. All fields required with validation specificity embedded in edit_post.html template except for email, as explained before. The form offers edit/cancel buttons. After edit button confirmation, the post data get updated in the database and consequently on the posts.html. 
+- Cancel button redirects back to posts.html template. 
+- The user is informed about the confirmed edit(update) with a flash message in the upper part of the page.
 ![post_edit](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postedit.jpg)
 ![post_edit_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/posteditconfirm.jpg)
 
@@ -168,8 +168,7 @@ Posts consist of Materializecss library collapsible component and its required J
 addcategory.jpg
 
 ###### Delete Category
-![Delete_category](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcat.jpg)
-![Deletecattoggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcatconfirm.jpg)
+![Deletecattoggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecatconfirm.jpg)
 deletecattoggle.jpg
 ![Deleteconfirmed](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecatconfirm.jpg)
 deletecattoggle.jpg
