@@ -165,13 +165,10 @@ Posts consist of Materializecss library collapsible component and its required J
 ###### Edit Category
 ![Edit_category](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcat.jpg)
 ![Editcatconfirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcatconfirm.jpg)
-addcategory.jpg
 
 ###### Delete Category
-![Deletecattoggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecatconfirm.jpg)
-deletecattoggle.jpg
+![Deletecattoggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecattoggle.jpg)
 ![Deleteconfirmed](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecatconfirm.jpg)
-deletecattoggle.jpg
 
 ### Features left to implement
 * Comments, Likes functionality to comments for each user. 
