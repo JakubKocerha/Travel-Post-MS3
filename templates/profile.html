@@ -19,7 +19,11 @@
                                         <h5>{{ post.title_text }}</h5>
                                         <span class="post-date">{{ post.date_post }}</span>
                                         <span class="post-category">{{ post.category_name }}</span>
-                                        <p id="toggle">{{ post.summary}}</p>
+                                        {% for summaryline in post.summary %}
+                                            <p>
+                                            {{ summaryline }}
+                                            </p>
+                                        {% endfor %}
                                         
                                     </div>
                                     <div class="col s12 m3">
@@ -46,7 +50,9 @@
                                 </div>
                             </div>
                             <div class="collapsible-body blue-grey-text text-lighten-5">
-                                <p class="main-p">{{ post.post_body }}</p>
+                                {% for body in post.post_body %}
+                                    <p class="main-p">{{ body }}</p>
+                                {% endfor %}
                                 <p class="user-p">Posted by: <em class="p-italic">{{ post.posted_by }}</em></p>
                                 <p class="email-p">Email: <em class="p-italic">{{ post.email }}</em></p>
                             </div>
