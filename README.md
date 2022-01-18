@@ -1,10 +1,6 @@
 # Arctic Travels
 
----
-
 ## User Experience (UX)
-
-
 
 ### First-time visitor goals
 
@@ -62,7 +58,7 @@ Main colors chosen for the site:
 - Except for the main background image, all images are inserted by registered users via a direct input link to the external image in post form. Each image is responsive and toggles to the whole screen width on click.
 
 
-![FeatureMockup](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/mockup.jpg)
+![FeatureMockup](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/mockup.jpg)
 
 ---
 
@@ -75,88 +71,111 @@ The main structure of the site is divided into three parts:
     
 2. __Main content section__
     - This section is fully customized in accordance with the goal of each navbar link using Python(Flask) to provide special functionality for each of them. 
-    - The main section also holds the functionality for flash messages defined in app.py file for specific templates and custom made back-to-top button.
+    - The main section also holds the functionality for flash messages defined in app.py file for specific templates and custom made scrollTop button.
     - Background image is the same throughout the site.
     
 3.  __Footer__
     - Footer is unified for all users(new/logged in/admin) and provides links to the social media using cloudflare library hover effects linked with CDN in head element of the base template. Footer is fully responsive throughout wide range of devices.
     - Due to the simplicity of the footer, it is not being mentioned in another sections of the readme.md file.
-    ![footer](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/footer.jpg)
+    ![footer](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/footer.jpg)
 
 
 ### New visitor
 #### Landing Page
 ##### Navbar
 - Unlogged/new visitor is provided with Logo link and links for Home, Posts, Log in and Register. 
-![Navbar unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/navbarunlogged.jpg)
+![Navbar_unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/navbarunlogged.jpg)
 
 ##### Home
 - New visitor will see Welcome Title of the site and "Start" button linking him to the registration form. Background image is the same throughout the site. 
-![Home unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/homeunlogged.jpg)
+![Home_unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/homeunlogged.jpg)
 
 #### Post Page
 - Unlogged/new visitors are provided with the functionality to view/search the posts. No other functionality is accessible.
+Search functionality indexing allows to search within the title text and summary text(Set in MongoDB database)
 Posts consist of Materializecss library collapsible component and its required JS functions provided on materializecss.com and present in script.js file. Collapsible has its header with title, date, category, summary, image, and image title. Materialize image classes provide toggle functionality to zoom each post image. The collapsible body triggers by clicking on the collapsible header. For better user experience, a hover effect over the collapsible header was implemented to make it evident that the header is clickable. The collapsible body provides main body text, username, and email(not required). No email option offers the user privacy if chosen. It doesn't interfere with possible user restrictions in case of explicitly inappropriate content, as the post is related to the username in the MongoDB database. Jinja templating provides iterating through the database and returning paginated posts with date descending criteria. 
-![Posts_search](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postssearch.jpg)
-![Posts_unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postsunlogged.jpg)
+![Posts_search](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postssearch.jpg)
+![Posts_unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postsunlogged.jpg)
 
 #### Log In Form
 - The form provides straight-through login functionality with required Username and Password input fields. 
 - The registration link is suggested to the new visitor under the login form. 
-![Login_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/loginform.jpg)
+![Login_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/loginform.jpg)
 
 #### Registration Form
 - The form provides easy registration with Username, Password, and Password confirmation all required and with validation requirement functionality embedded in form input fields in register.html file. The rule checkbox offers a toggle window with information about the site's rules. 
 - The Log in link is suggested to the registered visitor under the login form.
-![Register_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/registerform.jpg)
+![Register_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/registerform.jpg)
 
 
 
-### Logged in user
+### Logged-In User
 #### Landing Page
 ##### Navbar
-- Logged in user is provided with Logo link and links for Home, Posts, Profile, Add Post and Log out.
-![Navbar logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/navbarlogged.jpg)
+- Logged-in user is provided with Logo link and links for Home, Posts, Profile, Add Post and Log out.
+![Navbar_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/navbarlogged.jpg)
 
 ##### Home
-- Logged in user can see Welcome Title of the site and "Start" button linking him to the registration form invisible as it loses its logic. Background image is the same throughout the site. 
-![Home logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/homelogged.jpg)
+- Logged-in user can see Welcome Title of the site and "Start" button linking him to the registration form invisible as it loses its logic. Background image is the same throughout the site. 
+![Home_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/homelogged.jpg)
 
-#### Post Page
+##### Post Page
 - Logged in user is provided with the functionality to view/search/edit/delete the posts.
 - In addition to the posts page's unlogged visitor functionality, the right side of the collapsible header contains Edit/Delete buttons to the session(logged in) user's posts providing a fast and easy way to edit or delete existing posts.
-![Posts_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postlogged.jpg)
+![Posts_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postlogged.jpg)
 
-    ##### Delete button 
+###### Delete button 
     - defensive programming solved with a confirmation toggle window. 
     - The user is informed about the confirmed deletion with a flash message in the upper part of the page.
-![post_delete_toggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postdeletetoggle.jpg)
-![post_delete_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postdeleteconfirm.jpg)
+![post_delete_toggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postdeletetoggle.jpg)
+![post_delete_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postdeleteconfirm.jpg)
 
-    ##### Edit button
+###### Edit button
     - redirects the user into edit_post.html template with input fields/textareas correctly prefilled with actual saved data ready for editing. All fields required with validation specificity embedded in edit_post.html template except for email, as explained before. The form offers edit/cancel buttons. After edit button confirmation, the post data get updated in the database and consequently on the posts.html. 
     - Cancel button redirects back to posts.html template. 
     - The user is informed about the confirmed edit(update) with a flash message in the upper part of the page.
-![post_edit](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postedit.jpg)
-![post_edit_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/posteditconfirm.jpg)
+![post_edit](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/postedit.jpg)
+![post_edit_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/posteditconfirm.jpg)
 
 ##### Profile Page
 - Profile page offers the same functionality as Posts page, except the posts rendered are explicitly posted by a session(logged in) user. _"active user"'s profile_ is printed above the post's preview. 
-![profileuser](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/profileuser.jpg)
+![profileuser](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/profileuser.jpg)
 
+##### Log Out Nav Link
+- Log out link redirects user into login.html template as stated in /logout app.py router decorator and provides a flash message informing the user about being logged out. 
+- The navbar switches into the primary content offer functionality for the new visitor/unlogged user as stated in the base.html conditioning for login.html template.  
+![user_loggedout](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/userloggedout.jpg)
 
+### Logged-In Admin User
+#### Landing Page
+##### Navbar
+- Logged-in Admin user is provided with Logo link and links for Home, Posts, Profile, Add Post, Log out and extended for Manage Categories link. The if criteria stated in base.html nav links.
+- At this point of the development, the Admin has equal rights as any other user except the Manage Categories functionality not available to any other user. 
+![Navbar_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/navbaradmin.jpg)
 
+##### Manage Categories Page
+- Manage Categories allow Admin to add/modify and delete records in MongoDB categories collection. 
+- The defense programming for deleting/editingcategories principally is identical to the posts deleting/editing. Add/Edit categories buttons are linked to their templates where the modification is specified and after confirmation executed in the database through app.py route decorators and their functions. After the confirmation Manage Categories template re-renders with a Flah message confirming deleting/editing. 
+![Manage_categories](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/managecategories.jpg)
 
-![posts_logged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
-![Posts_logged_delete_toggle](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+###### Add Category
+![Add_category](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/addcategory.jpg)
+![Addcatconfirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/addcatconfirm.jpg)
 
+###### Edit Category
+![Edit_category](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcat.jpg)
+![Editcatconfirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcatconfirm.jpg)
+addcategory.jpg
 
+###### Delete Category
+![Delete_category](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcat.jpg)
+![Deletecattoggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/editcatconfirm.jpg)
+deletecattoggle.jpg
+![Deleteconfirmed](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/readme/deletecatconfirm.jpg)
+deletecattoggle.jpg
 
-
-
-
-
-- Logged in Admin user is provided with Logo link and links for Home, Posts, Profile, Add Post, Manage Categories and Log out.
-![Navbar admin](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
-
-
+### Features left to implement
+* Comments, Likes functionality to comments for each user. 
+* Extension of Admin rights to delete any post, restrict user, delete a user account.
+* Social media communities linked to Arctic Travels. 
+* Change username and password functionality.
