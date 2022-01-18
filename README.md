@@ -1,8 +1,10 @@
 # Arctic Travels
 
+---
+
 ## User Experience (UX)
 
----
+
 
 ### First-time visitor goals
 
@@ -13,8 +15,6 @@
 3. As a first-time visitor, I want to get as much information as possible to gain confidence and personal security to travel to remote areas..
 
 4. As a first-time contributor to the website, I want easy access to the posting form, easy registration, login, deletion, and search functionalities. 
-
----
 
 ### Returning and frequent visitor goals
 
@@ -63,6 +63,8 @@ Main colors chosen for the site:
 
 
 ![FeatureMockup](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/mockup.jpg)
+
+---
 
 ## Features
 The main structure of the site is divided into three parts:
@@ -114,33 +116,33 @@ Posts consist of Materializecss library collapsible component and its required J
 #### Landing Page
 ##### Navbar
 - Logged in user is provided with Logo link and links for Home, Posts, Profile, Add Post and Log out.
-![Navbar logged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Navbar logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/navbarlogged.jpg)
 
 ##### Home
 - Logged in user can see Welcome Title of the site and "Start" button linking him to the registration form invisible as it loses its logic. Background image is the same throughout the site. 
-![Home logged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Home logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/homelogged.jpg)
 
 #### Post Page
 - Logged in user is provided with the functionality to view/search/edit/delete the posts.
 - In addition to the posts page's unlogged visitor functionality, the right side of the collapsible header contains Edit/Delete buttons to the session(logged in) user's posts providing a fast and easy way to edit or delete existing posts.
-![Posts_logged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Posts_logged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postlogged.jpg)
 
     ##### Delete button 
     - defensive programming solved with a confirmation toggle window. 
     - The user is informed about the confirmed deletion with a flash message in the upper part of the page.
-![post_delete_toggle](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
-![post_delete_confirm](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![post_delete_toggle](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postdeletetoggle.jpg)
+![post_delete_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postdeleteconfirm.jpg)
 
     ##### Edit button
     - redirects the user into edit_post.html template with input fields/textareas correctly prefilled with actual saved data ready for editing. All fields required with validation specificity embedded in edit_post.html template except for email, as explained before. The form offers edit/cancel buttons. After edit button confirmation, the post data get updated in the database and consequently on the posts.html. 
     - Cancel button redirects back to posts.html template. 
     - The user is informed about the confirmed edit(update) with a flash message in the upper part of the page.
-![post_edit](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
-![post_edit_confirm](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![post_edit](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postedit.jpg)
+![post_edit_confirm](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/posteditconfirm.jpg)
 
 ##### Profile Page
 - Profile page offers the same functionality as Posts page, except the posts rendered are explicitly posted by a session(logged in) user. _"active user"'s profile_ is printed above the post's preview. 
-![profileuser](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![profileuser](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/profileuser.jpg)
 
 
 
