@@ -62,7 +62,7 @@ Main colors chosen for the site:
 - Except for the main background image, all images are inserted by registered users via a direct input link to the external image in post form. Each image is responsive and toggles to the whole screen width on click.
 
 
-![FeatureMockup](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![FeatureMockup](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/mockup.jpg)
 
 ## Features
 The main structure of the site is divided into three parts:
@@ -79,34 +79,34 @@ The main structure of the site is divided into three parts:
 3.  __Footer__
     - Footer is unified for all users(new/logged in/admin) and provides links to the social media using cloudflare library hover effects linked with CDN in head element of the base template. Footer is fully responsive throughout wide range of devices.
     - Due to the simplicity of the footer, it is not being mentioned in another sections of the readme.md file.
-    ![footer](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+    ![footer](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/footer.jpg)
 
 
 ### New visitor
 #### Landing Page
 ##### Navbar
 - Unlogged/new visitor is provided with Logo link and links for Home, Posts, Log in and Register. 
-![Navbar unlogged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Navbar unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/navbarunlogged.jpg)
 
 ##### Home
 - New visitor will see Welcome Title of the site and "Start" button linking him to the registration form. Background image is the same throughout the site. 
-![Home unlogged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Home unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/homeunlogged.jpg)
 
 #### Post Page
 - Unlogged/new visitors are provided with the functionality to view/search the posts. No other functionality is accessible.
 Posts consist of Materializecss library collapsible component and its required JS functions provided on materializecss.com and present in script.js file. Collapsible has its header with title, date, category, summary, image, and image title. Materialize image classes provide toggle functionality to zoom each post image. The collapsible body triggers by clicking on the collapsible header. For better user experience, a hover effect over the collapsible header was implemented to make it evident that the header is clickable. The collapsible body provides main body text, username, and email(not required). No email option offers the user privacy if chosen. It doesn't interfere with possible user restrictions in case of explicitly inappropriate content, as the post is related to the username in the MongoDB database. Jinja templating provides iterating through the database and returning paginated posts with date descending criteria. 
-![Posts_search](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
-![Posts_unlogged](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Posts_search](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postssearch.jpg)
+![Posts_unlogged](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/postsunlogged.jpg)
 
 #### Log In Form
 - The form provides straight-through login functionality with required Username and Password input fields. 
 - The registration link is suggested to the new visitor under the login form. 
-![Login_form](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Login_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/loginform.jpg)
 
 #### Registration Form
 - The form provides easy registration with Username, Password, and Password confirmation all required and with validation requirement functionality embedded in form input fields in register.html file. The rule checkbox offers a toggle window with information about the site's rules. 
 - The Log in link is suggested to the registered visitor under the login form.
-![Register_form](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants/blob/main/readme-media/landingp.jpg)
+![Register_form](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/static/images/Readme/registerform.jpg)
 
 
 
