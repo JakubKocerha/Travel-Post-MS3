@@ -95,7 +95,7 @@ h3 {
 
 .collapsible-header h5 {
     font-size: 27px;
-    text-shadow: 1px 1px 0 #000000;
+    text-shadow: 1px 1px 0 ;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
@@ -117,7 +117,7 @@ h3 {
 }
 
 .strong-color {
-    color: rgb(153 160 243);;
+    color: rgb(153 160 243);
 }
 
 .collapsible-body {

@@ -29,7 +29,7 @@ def home():
 
 # gets data from MongoDB; code from CI tutorials
 # pagination https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
-# slack https://code-institute-room.slack.com/archives/C7JQY2RHC/p1622213878181600
+# slack code-institute-room.slack.com/archives/C7JQY2RHC/p1622213878181600
 @app.route("/get_posts", methods=["GET", "POST"])
 def get_posts():
     page, per_page, offset = get_page_args(
@@ -37,7 +37,7 @@ def get_posts():
         offset_parameter='offset')
     per_page = 10
     offset = (page - 1) * per_page
-    posts = list(mongo.db.posts.find().sort("post_date"))
+    posts = list(mongo.db.posts.find()) #.sort("post_date"))
     total = len(posts)
     posts_paginated = posts[offset: offset + per_page]
     pagination = Pagination(
@@ -75,14 +75,6 @@ def get_posts():
         "posts.html", posts=posts_paginated, page=page, per_page=per_page,
         pagination=pagination)
 
-"""
-# adds search functionality; code from CI tutorials
-@app.route("/search", methods=["GET",  "POST"])
-def search():
-    query = request.form.get("query")
-    posts = mongo.db.posts.find({"$text": {"$search": query}})
-    return render_template("posts.html", posts=posts)
-"""
 
 # adds register functionality; code from CI turorials
 # excluding password confirmation validation
