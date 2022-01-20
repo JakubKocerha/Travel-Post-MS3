@@ -202,15 +202,6 @@ Posts consist of Materializecss library collapsible component and its required J
 * Heroku deployed [travel-post](https://travel-post.herokuapp.com/) on smartphone Samsung Galaxy Xcover Pro, laptop HP ProBook x360 11 G3 EE, and Dell screen res. 1920 x 1080px.
 * Browsers used for testing - Google Chrome, Microsoft Edge.
 
-### Google Devtools Lighthouse - testing
-
-#
-#
-# give a report
-#
-#
-
-
 ### Base template testing
 - wiring funcitonalities providing unified interface for Nav bar, Footer, Flash messages and CrollTop button work correctly on all pages of the site
 
