@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stories and tricks for travelling the Arctic.">
+    <meta name="keywords" content="Arctic, travelling, posts">
+    <meta name="author" content="Jakub Kocerha">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"
         referrerpolicy="no-referrer" type="text/css"/>
@@ -15,6 +18,7 @@
     {% endblock %}
     <title>Arctic Travels</title>
 </head>
+
 <body>
     <header>
     <!-- top navbar from materializecss.com, customized with CI tutorial-->
@@ -58,7 +62,6 @@
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
 		</ul>
-        
     </header>
 
     <main>
@@ -81,11 +84,10 @@
         </section>
 
     {% block content %}
-        
     {% endblock %}
-
     </main>
-    
+
+    <!-- social links code from https://github.com/BarryBeics/Rosie-Odenkirk -->
     <footer class=" valign-wrapper display grey darken-4">
         <div class="col-sm-12 social-box">
             <ul class="list-inline social-links">
@@ -121,7 +123,15 @@
                 </li>
             </ul>
         </div>
-
+        
+        <div class="center-align">
+            <p class="footer-p p-admin blue-grey-text text-lighten-5">
+                admin: jakubbubble@gmail.com
+            </p>
+            <p class="footer-p p-rights blue-grey-text text-lighten-5">
+                © 2022 Jakub Kocerha. All rights reserved.
+            </p>
+        </div> 
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

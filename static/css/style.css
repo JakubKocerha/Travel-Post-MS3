@@ -141,12 +141,24 @@ h3 {
 }
 
 .collapsible.popout>li.active {
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(223, 222, 222, 0.15), 5px 5px 5px 0px rgba(197, 197, 197, 0.15);
-    box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.15), 5px 5px 0px 0px rgba(253, 253, 253, 0.15);
-    margin: 16px 0;
+    box-shadow: 0 0 1px 1px #e8f0fe;
+    margin: 14px 0;
 }
 
-/* to set the responsive image to the whole width of parent container in every resolution */
+.p-admin {
+    font-size: 15px;
+}
+
+.p-rights {
+    font-size: 10px;
+}
+
+.footer-p {
+    margin: 5px 20px 0 20px;
+}
+
+/* to set the responsive image to the whole width
+ of parent container in every resolution */
 img.responsive-img {
     width: 100%;
 }
@@ -357,6 +369,12 @@ visibility: visible;
     .cancel-btn {
         font-size: 15px;
         /*min-width: 190px;*/
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 100%;
     }
 }
 

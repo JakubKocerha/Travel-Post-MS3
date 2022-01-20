@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
     <!-- codes below from materializecss.com and CI tutorials -->
     <h3 class="center-align blue-grey-text text-lighten-5">{{ username.capitalize() }}'s Profile</h3>
     
@@ -42,7 +43,7 @@
                                                 <h4 class="delete-color center-align">Are you sure you want to DELETE your post {{ post.title_text }}?</h4>
                                             </div>
                                             <div class="modal-footer blue-grey lighten-5">
-                                                <a href="{{ url_for('get_posts') }}" class="modal-close btn-flat cancel-btn blue-grey-text text-lighten-5">Cancel</a>
+                                                <button class="modal-close btn-flat cancel-btn blue-grey-text text-lighten-5">Cancel</button>
                                                 <a href="{{ url_for('delete_userpost', post_id=post._id) }}" class="modal-close btn-flat blue-grey-text text-lighten-5 grey darken-2">Delete</a>
                                             </div>
                                         </div>
@@ -50,6 +51,7 @@
                                 </div>
                             </div>
                             <div class="collapsible-body blue-grey-text text-lighten-5">
+                                <!-- iterates through post_body list -->
                                 {% for body in post.post_body %}
                                     <p class="main-p">{{ body }}</p>
                                 {% endfor %}
@@ -62,4 +64,5 @@
             </ul>
         </div>
     </div>
+    
 {% endblock %}

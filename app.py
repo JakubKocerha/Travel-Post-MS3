@@ -37,7 +37,7 @@ def get_posts():
         offset_parameter='offset')
     per_page = 10
     offset = (page - 1) * per_page
-    posts = list(mongo.db.posts.find()) #.sort("post_date"))
+    posts = list(mongo.db.posts.find())
     total = len(posts)
     posts_paginated = posts[offset: offset + per_page]
     pagination = Pagination(
@@ -95,12 +95,12 @@ def register():
             flash("This username is used! Please, choose a different one.")
             return redirect(url_for("register"))
 
-        login = {
+        register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get(
                 "password_confirmation"))
         }
-        mongo.db.users.insert_one(login)
+        mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -124,7 +124,7 @@ def login():
                     user_account["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}!".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("get_posts", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -251,6 +251,7 @@ def add_category():
     return render_template("add_category.html")
 
 
+# edits category; code from CI turorials
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -266,6 +267,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# deletes category; code from CI turorials
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
