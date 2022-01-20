@@ -8,7 +8,7 @@
                     Post your stories, tips, and tricks about your adventures in the European Arctic.
                 </h4>
                 <br>
-                <!-- Hide Start(register link) button to logged in users -->
+                <!-- Hide Start(register link) button to logged-in users -->
                 {% if session.user|lower %}
                 {% else %}
                     <a href="{{ url_for('register') }}"

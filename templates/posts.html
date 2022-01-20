@@ -27,7 +27,7 @@
             {% if posts|length > 0 %}
                 <ul class="collapsible popout">
                     {{ pagination.links }}
-                        {% for post in posts|sort(reverse=true, attribute="date_post") %} <!--,|sort(reverse=true) reverse=true  attribute="date_post"  -->
+                        {% for post in posts|sort(reverse=true, attribute="date_post") %}
                         <li>
                             <div class="collapsible-header blue-grey-text text-lighten-5">
                                 <div class="row valign-wrapper">

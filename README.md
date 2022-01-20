@@ -308,6 +308,7 @@ Posts consist of Materializecss library collapsible component and its required J
 - Validation of JS files
 [app.py](https://github.com/JakubKocerha/Travel-Post-MS3/blob/main/app.py)
     - No issues detected.
+- env.py is too long to be formatted - PEP8 validator returns an error, which has no functional impact on the app.
 
 ### Responsive Design:
 * Materializecss grid applied in HTML markup
@@ -437,3 +438,26 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 8. Live link can be found [here](https://travel-post.herokuapp.com/)
 
+## Credits
+### Content
+#### Fonts
+- [Google Fonts](https://fonts.google.com/)
+
+#### Codes adopted from other sources:
+- Big par of the code was adopted from CI tutorials a miniprojects as stated in commented-out lines among codes
+- Materializecss
+
+#### External links
+- [Facebook](https://www.facebook.com/)
+- [Instagram](https://www.instagram.com/)
+- [Twitter](https://twitter.com/)
+- [Pinterest](https://www.pinterest.com/)
+- [Youtube](https://www.youtube.com/)
+
+#### Images
+- All used photos were taken by Jakub Kocerha
+- Main background created by Tuva Holmquist
+
+#### Acknowledgment
+- To all tutors and co-students of Code Institue
+- To mentor Rahul who fully supported me during development

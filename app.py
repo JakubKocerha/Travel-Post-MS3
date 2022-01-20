@@ -23,7 +23,6 @@ mongo = PyMongo(app)
 # wires base.html up with home.html
 @app.route("/home")
 def home():
-
     return render_template('home.html')
 
 
