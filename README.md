@@ -373,24 +373,23 @@ Posts consist of Materializecss library collapsible component and its required J
 ## Deployment
 ### GitHub Pages
 - The site was deployed to GitHub pages. The steps to deploy are as follows:
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/Travel-Post-MS3)
 2. At the top of the Repository (not top of page), navigate to the _Settings_ button.
 3. Scroll down the Settings page until you locate the _GitHub Pages_ Section.
 4. Under _Source_, click the dropdown called _None_ and select _Master Branch_ and press _Save_. 
 5. Once the _Master branch_ has been selected, the page will be automatically refreshed with a detailed ribbon including a link to the site to indicate the successful deployment. 
 
-- The live link can be found here - https://jakubkocerha.github.io/JakubKocerha-milestonep2-rare-tropical-plants/
-- The link to the repository can be found here - https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants
+- The link to the repository can be found [here](https://github.com/JakubKocerha/Travel-Post-MS3)
 
 ### Forking the GitHub Repository
 - By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/Travel-Post-MS3)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### Making a Local Clone
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/JakubKocerha-milestonep2-rare-tropical-plants)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakubKocerha/Travel-Post-MS3)
 2. Above the list of files, click "Code".
 3. To clone the repository using HTTPS, navigate to "HTTPS", copy the link.
 4. Open Git Bash
@@ -435,4 +434,6 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 6. Navigate into Deploy section of your Heroku app
     - click on Enable Automatic Deployment and after click on Deploy branch
 7. After the deployment is processed, you’ll see the message “Your app is successfully deployed”
+
+8. Live link can be found [here](https://travel-post.herokuapp.com/)
 
